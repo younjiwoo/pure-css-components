@@ -1,0 +1,67 @@
+html {
+    height: 100%;
+    overflow: hidden;
+}
+body { 
+    font-family: sans-serif;
+    margin:0;
+    padding:0;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    height: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.parallax {
+    position: relative;
+    padding: 20%;
+    min-height: 100%;
+    width: 102%;
+    box-sizing: border-box;
+    box-shadow: 0 -1px 10px rgba(0, 0, 0, .7);
+    transform-style: inherit;
+}
+.parallax:before {
+    content: ""; 
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left:0;
+    right:0;
+}
+.parallax, .parallax:before {
+    background: 50% 50% / cover; 
+}
+.parallax a {
+    text-decoration: none;
+    font-weight: bold;
+    color: darksalmon;
+}
+.parallax:first-child {
+    background-image: url(../images/1.jpg);
+    background-attachment: fixed;  
+}
+.parallax:nth-child(2):before {
+    background-image: url(../images/2.jpg);
+    transform: translateZ(-1px) scale(2);
+    z-index:-1;
+}
+.parallax:nth-child(3) {
+    background-image: url(../images/3.jpg);
+    background-attachment: fixed;
+}
+.parallax:nth-child(4):before {
+    background-image: url(../images/2.jpg);
+    transform: translateZ(-1px) scale(2);
+    z-index:-1;
+}
+.parallax:nth-child(5) {
+    background-image: url(../images/1.jpg);
+}
+.floatingBox { /*This should go inside of parallax class*/
+    width: 50%;
+    padding: 5%;
+    background-color: #fff;
+    opacity: .6;
+    box-shadow: 0 0 1em rgba(0, 0, 0, .7);
+}
